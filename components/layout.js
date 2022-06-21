@@ -2,6 +2,7 @@ import { useState } from "react";
 // Components
 import Header from "./header";
 
+
 export default function Layout({ children }) {
   const [menuState, setMenuState] = useState(false);
   const [cursorHovered, setCursorHovered] = useState(false);
@@ -14,6 +15,7 @@ export default function Layout({ children }) {
         onMouseEnter={() => setCursorHovered(true)}
         onMouseLeave={() => setCursorHovered(false)}
       />
+      <main>{children}</main>
     </>
   );
 }

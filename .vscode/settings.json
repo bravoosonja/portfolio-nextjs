@@ -1,0 +1,13 @@
+{
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {
+        "ejs": "html",
+        "javascript": "javascriptreact",
+        "vue-html": "html"
+    },
+    "scss.lint.boxModel": "warning",
+    "scss.lint.float": "warning",
+    "scss.lint.important": "warning",
+    "scss.lint.importStatement": "warning",
+    "scss.lint.universalSelector": "warning"
+}

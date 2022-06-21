@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+// Styles
+import "../styles/components/header.scss";
+// Icons
+import { CgMenu } from "react-icons/cg";
 
 export default function Header({ setMenuState, setCursorHovered }) {
   // close hamburger menu upon navigation
@@ -11,21 +15,19 @@ export default function Header({ setMenuState, setCursorHovered }) {
   }, [location]);
 
   return (
-    <header>
+    <header className="header">
       <div className="container fluid">
         <div className="header-inner">
-          <Link activeClassName="active" href="/">
-            Portfolio.
+          <Link activeClassName="active" to="/">
+            <span className="portfolio">Portfolio.</span>
           </Link>
           <div
+            className="hamburger-menu"
             onClick={() => setMenuState(true)}
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
-            className="hamburger-menu"
           >
-            {/* hamburger menu */}
-            <span></span>
-            <span></span>
+            <CgMenu />
           </div>
         </div>
       </div>

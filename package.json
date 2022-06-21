@@ -17,6 +17,7 @@
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
     "framer-motion": "^6.3.11",
+    "react-icons": "^4.4.0",
     "sass": "^1.52.3"
   }
 }

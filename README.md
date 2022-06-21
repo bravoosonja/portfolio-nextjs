@@ -24,6 +24,7 @@
     exit={{ height: [0, window.innerHeight, 0], top: [null, 0, 0] }}
     ```
 - Next.js
+    - using SASS styling for global styles, variables
 
 
 # Acknowledgements

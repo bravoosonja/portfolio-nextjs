@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 // Styles
-import "../styles/components/header.scss";
+import styles from "../styles/components/header.module.scss";
 // Icons
 import { CgMenu } from "react-icons/cg";
 
@@ -15,20 +15,22 @@ export default function Header({ setMenuState, setCursorHovered }) {
   }, [location]);
 
   return (
-    <header className="header">
-      <div className="container fluid">
-        <div className="header-inner">
-          <Link activeClassName="active" to="/">
-            <span className="portfolio">Portfolio.</span>
-          </Link>
-          <div
-            className="hamburger-menu"
-            onClick={() => setMenuState(true)}
-            onMouseEnter={() => setCursorHovered(true)}
-            onMouseLeave={() => setCursorHovered(false)}
-          >
-            <CgMenu />
-          </div>
+    <header className={styles["header"]}>
+      <div className={styles["container"]}>
+        <div className={styles["header-inner"]}>
+          <nav>
+            <Link href="/">
+              <a>Portfolio.</a>
+            </Link>
+            <div
+              className={styles["hamburger-menu"]}
+              onClick={() => setMenuState(true)}
+              onMouseEnter={() => setCursorHovered(true)}
+              onMouseLeave={() => setCursorHovered(false)}
+            >
+              <CgMenu />
+            </div>
+          </nav>
         </div>
       </div>
     </header>

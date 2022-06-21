@@ -1,20 +1,30 @@
-@import "./normalize.scss";
-@import "./variables.scss";
+// @import "./normalize.module.scss";
+// @import "./variables.module.scss";
 
-@import "./header.scss";
-@import "./banner.scss";
-@import "./menu.scss";
+// @import "./components/header.module.scss";
+// @import "./components/banner.module.scss";
+// @import "./components/menu.module.scss";
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --background: #f6f6f6;
+  --text: #12131d;
+  --secondary: #434448;
+  --cursor: #e7dede;
+}
 
 * {
   box-sizing: border-box;
 }
 
-body {
+html,body {
   height: 100%;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
-  background-color: $white;
-  color: $text;
+  background-color:var(--white);
+  color: var(--text);
+  box-sizing: border-box;
 }
 
 h1,
@@ -60,7 +70,7 @@ small,
 
 a {
   text-decoration: none;
-  color: $black;
+  color: var(--black);
   transition: ease-in-out 0.2s;
 }
 
@@ -95,7 +105,7 @@ ul {
     list-style: none;
     font-size: 0.875rem;
     font-weight: 300;
-    color: $secondary;
+    color: var(--secondary);
     margin-bottom: 0.5rem;
 
     @media (max-width: 680px) {
@@ -103,7 +113,7 @@ ul {
     }
 
     a {
-      color: $secondary;
+      color: var(--secondary);
     }
 
     &.disabled {
@@ -112,44 +122,46 @@ ul {
   }
 }
 
-.container {
-  flex-grow: 1;
-  margin: 0 auto;
-  padding: 0 32px;
-  position: relative;
-  width: auto;
-
-  @media (min-width: 1024px) {
-    max-width: 960px;
-  }
-
-  @media (min-width: 1216px) {
-    max-width: 1152px;
-  }
-
-  @media (min-width: 1480px) {
-    max-width: 1244px;
+// classes
+  .container {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    width: auto;
+  
+    @media (min-width: 1024px) {
+      max-width: 960px;
+    }
+  
+    @media (min-width: 1216px) {
+      max-width: 1152px;
+    }
+  
+    @media (min-width: 1480px) {
+      max-width: 1244px;
+    }
+    
+    &.fluid {
+      padding: 0;
+      margin: 0;
+      max-width: 100% !important;
+    }
   }
   
-  &.fluid {
-    padding: 0;
-    margin: 0;
-    max-width: 100% !important;
+  .body-lock {
+    overflow-y: hidden;
   }
-}
+  
+  .cursor {
+    cursor: pointer;
+    height: 2.5rem;
+    width:2.5rem;
+    position:absolute;
+    z-index: 10;
+    top:0;
+    background: var(--cursor);
+    border-radius: 100%;
+    pointer-events: none;
+  }
 
-.body-lock {
-  overflow-y: hidden;
-}
-
-.cursor {
-  cursor: pointer;
-  height: 2.5rem;
-  width:2.5rem;
-  position:absolute;
-  z-index: 10;
-  top:0;
-  background: #e7dede;
-  border-radius: 100%;
-  pointer-events: none;
-}

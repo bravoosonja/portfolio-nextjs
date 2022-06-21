@@ -1,6 +1,5 @@
 // Styles
 import "../styles/global.scss";
-import "../styles/variables.scss";
 
 // Components
 import Layout from "../components/layout";

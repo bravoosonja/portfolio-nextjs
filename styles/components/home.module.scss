@@ -15,8 +15,10 @@
         margin: 0 auto;
         padding: 0 32px;
         position: relative;
-        width: auto;
-      
+        width: 100vw;
+        font-size: 1.2rem;
+        z-index: 1;
+        
         @media (min-width: 1024px) {
           max-width: 960px;
         }
@@ -30,6 +32,24 @@
         }
       }
 
+      .headline {
+        h1 {
+          margin-top: 0;
+          font-size: 3.052em;
+          font-weight: 700;
+          text-align: left;
+          width: 100%;
+
+          &:hover {
+            color: black;
+            -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            cursor: none;
+          }
+        }
+      }
+
       .main-headline {
         font-weight: 400;
         line-height: 10rem;
@@ -38,18 +58,12 @@
         mix-blend-mode: difference;
         width: 100%;
         position: absolute;
-        z-index: 1;
+        z-index: 10;
         left: 0;
         text-align: center;
         top: 50%;
         transform: translateY(-50%);
-
-        &:hover{
-          color: black;
-          -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: black;
-        }
+      
 
         span.semi-bold {
           font-weight: 400;
@@ -63,8 +77,14 @@
         }
 
         &.small {
-          font-size: 3rem;
-      
+          font-size: 5rem;
+        }
+
+        &:hover {
+          color: black;
+          -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
         }
       }
       

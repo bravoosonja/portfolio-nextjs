@@ -16,22 +16,20 @@ export default function Header({ setMenuState, setCursorHovered }) {
 
   return (
     <header className={styles["header"]}>
-      <div className={styles["container"]}>
-        <div className={styles["header-inner"]}>
-          <nav>
-            <Link href="/">
-              <a>Portfolio.</a>
-            </Link>
-            <div
-              className={styles["hamburger-menu"]}
-              onClick={() => setMenuState(true)}
-              onMouseEnter={() => setCursorHovered(true)}
-              onMouseLeave={() => setCursorHovered(false)}
-            >
-              <CgMenu />
-            </div>
-          </nav>
-        </div>
+      <div className={styles["header-inner"]}>
+        <nav>
+          <Link href="/">
+            <a>Portfolio.</a>
+          </Link>
+          <div
+            className={styles["hamburger-menu"]}
+            onClick={() => setMenuState(true)}
+            onMouseEnter={() => setCursorHovered(true)}
+            onMouseLeave={() => setCursorHovered(false)}
+          >
+            <CgMenu />
+          </div>
+        </nav>
       </div>
     </header>
   );

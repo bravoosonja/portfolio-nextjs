@@ -1,10 +1,3 @@
-// @import "./normalize.module.scss";
-// @import "./variables.module.scss";
-
-// @import "./components/header.module.scss";
-// @import "./components/banner.module.scss";
-// @import "./components/menu.module.scss";
-
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -16,6 +9,8 @@
 
 * {
   box-sizing: border-box;
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 html,body {
@@ -25,7 +20,13 @@ html,body {
   background-color:var(--white);
   color: var(--text);
   box-sizing: border-box;
+  margin: 0;
 }
+
+main {
+  display: block;
+}
+
 
 h1,
 h2,
@@ -72,6 +73,7 @@ a {
   text-decoration: none;
   color: var(--black);
   transition: ease-in-out 0.2s;
+  background-color: transparent;
 }
 
 ul {

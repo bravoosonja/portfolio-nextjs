@@ -1,37 +1,19 @@
 .header {
   position: relative;
-  padding: 0 1rem;
+  padding: 0 88px;
   width: 100%;
   z-index: 8;
-
+  
   @media (max-width: 768px) {
     padding: 0 32px;
   }
-
-  .container {
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    max-width: 100%;
-  
-    @media (min-width: 1024px) {
-      max-width: 960px;
-    }
-  
-    @media (min-width: 1216px) {
-      max-width: 1152px;
-    }
-  
-    @media (min-width: 1480px) {
-      max-width: 1244px;
-    }
 
     .header-inner {
       height: 120px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      width:100%;
 
       a {
         font-size: 1.4rem;
@@ -64,7 +46,5 @@
           
         }
       }
-      
-    }
   }
 }

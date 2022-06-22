@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MierA";
+  src: url("../assets/fonts/MierA-Regular.woff2") format("woff2");
+}
+
+
+
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -15,7 +22,7 @@
 
 html,body {
   height: 100%;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'MierA', 'Ibm Plex Sans', sans-serif;
   font-size: 16px;
   background-color:var(--white);
   color: var(--text);
@@ -36,12 +43,14 @@ h5 {
   margin: 2.75rem 0 1.05rem;
   line-height: 1.15;
   font-weight:500;
+  font-family: 'Ibm Plex Sans';
 }
 
 h1 {
   margin-top: 0;
   font-size: 3.052em;
   font-weight: 700;
+  font-family: 'Ibm Plex Sans';
 }
 
 h2 {
@@ -62,6 +71,7 @@ h5 {
 
 p {
   font-weight: 400;
+  font-family: 'MierA';
 }
 
 small,
@@ -74,6 +84,7 @@ a {
   color: var(--black);
   transition: ease-in-out 0.2s;
   background-color: transparent;
+  font-family: 'MierA';
 }
 
 ul {

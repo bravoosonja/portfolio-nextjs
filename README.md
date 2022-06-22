@@ -23,6 +23,7 @@
     animate={{ height: [0, window.innerHeight, 0], bottom: [null, 0, 0] }}
     exit={{ height: [0, window.innerHeight, 0], top: [null, 0, 0] }}
     ```
+    - Firing animation after the initial render 
 - Next.js
     - using SASS styling for global styles, variables
 

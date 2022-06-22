@@ -1,49 +1,78 @@
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 // Components
 import About from "./about";
 import Skills from "./skills";
 import Projects from "./projects";
 import Contact from "./contact";
+import Panels from "../components/panels";
 // Styles
 import styles from "../styles/components/home.module.scss";
+// framer motion
+import { AnimatePresence, motion } from "framer-motion";
+// Animation variants
+import { transition, parent } from "../util/animationVariants";
 
 export default function Home() {
   return (
-    <div className={styles["home"]}>
-      <div className={styles["inner-home"]}>
-        <section>
-          <div className={styles["container"]}>
-            <div className={styles["headline"]}>
-              <h1>About</h1>
+    <AnimatePresence>
+      <div className={styles["home"]}>
+        <div className={styles["inner-home"]}>
+          <section>
+            <div className={styles["container"]}>
+              <motion.div
+                className={styles["headline"]}
+                initial={{ visibility: "hidden" }}
+                animate={{ visibility: "visible", transition: { delay: 1 } }}
+                exit={{ visibility: "hidden", transition: { delay: 1 } }}
+              >
+                <h1>About</h1>
+              </motion.div>
+              <About />
             </div>
-            <About />
-          </div>
-        </section>
-        <section>
-          <div className={styles["container"]}>
-            <div className={styles["headline"]}>
-              <h1>Skills</h1>
+          </section>
+          <section>
+            <div className={styles["container"]}>
+              <motion.div
+                className={styles["headline"]}
+                initial={{ visibility: "hidden" }}
+                animate={{ visibility: "visible", transition: { delay: 1 } }}
+                exit={{ visibility: "hidden", transition: { delay: 1 } }}
+              >
+                <h1>Skills</h1>
+              </motion.div>
+              <Skills />
             </div>
-            <Skills />
-          </div>
-        </section>
-        <section>
-          <div className={styles["container"]}>
-            <div className={styles["headline"]}>
-              <h1>Projects</h1>
+          </section>
+          <section>
+            <div className={styles["container"]}>
+              <motion.div
+                className={styles["headline"]}
+                initial={{ visibility: "hidden" }}
+                animate={{ visibility: "visible", transition: { delay: 1 } }}
+                exit={{ visibility: "hidden", transition: { delay: 1 } }}
+              >
+                <h1>Projects</h1>
+              </motion.div>
+              <Projects />
             </div>
-            <Projects />
-          </div>
-        </section>
-        <section>
-          <div className={styles["container"]}>
-            <div className={styles["headline"]}>
-              <h1>Contact</h1>
+          </section>
+          <section>
+            <div className={styles["container"]}>
+              <motion.div
+                className={styles["headline"]}
+                initial={{ visibility: "hidden" }}
+                animate={{ visibility: "visible", transition: { delay: 1 } }}
+                exit={{ visibility: "hidden", transition: { delay: 1 } }}
+              >
+                <h1>Contact</h1>
+              </motion.div>
+              <Contact />
             </div>
-            <Contact />
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-    </div>
+      <Panels />
+    </AnimatePresence>
   );
 }

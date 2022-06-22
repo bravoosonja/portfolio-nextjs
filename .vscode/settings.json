@@ -9,5 +9,8 @@
     "scss.lint.float": "warning",
     "scss.lint.important": "warning",
     "scss.lint.importStatement": "warning",
-    "scss.lint.universalSelector": "warning"
+    "scss.lint.universalSelector": "warning",
+    "cSpell.words": [
+        "Mier"
+    ]
 }

@@ -26,6 +26,7 @@
     - Firing animation after the initial render 
 - Next.js
     - using SASS styling for global styles, variables
+    - Because header is included in the ```layout.js``` header persisted during panel animation effect. To resolve this, I had considered using context API to manage header state but decided to remove header from layout and save context API for theme to prioritise component reuse.
 
 
 # Acknowledgements

@@ -1,23 +1,25 @@
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-// Icons
+// icons
 import { CgClose } from "react-icons/cg";
+// components
+import Panels from "./panels";
+import List from "./list";
+// data
+import menuItems from "../data/menuItems.json";
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
-// Animation variants
-import { parent } from "../util/animationVariants";
-// Components
-import Panels from "../components/panels";
+// animation
+import {
+  transition,
+  titleSlideUp,
+  parent,
+  maskAnimation,
+} from "../util/animationVariants";
 // Styles
 import styles from "../styles/components/menu.module.scss";
 
-export default function menu({
-  menuState,
-  setMenuState,
-  x,
-  y,
-  setCursorHovered,
-}) {
+const Menu = ({ menuState, setMenuState, x, y, setCursorHovered }) => {
   return (
     <AnimatePresence>
       {menuState && (
@@ -29,7 +31,6 @@ export default function menu({
             exit={{ visibility: "hidden", transition: { delay: 1 } }}
           >
             <div className={styles["menu-title"]}>Menu</div>
-
             <div
               className={styles["close"]}
               onClick={() => setMenuState(false)}
@@ -43,6 +44,7 @@ export default function menu({
               <div className={styles["container"]}>
                 <div className={styles["menu-inner"]}>
                   <motion.ul
+                    // staggering effect
                     variants={parent}
                     initial="initial"
                     animate="animate"
@@ -50,10 +52,21 @@ export default function menu({
                     x={x}
                     y={y}
                   >
-                    <li>About</li>
-                    <li>Skills</li>
-                    <li>Projects</li>
-                    <li>Contact</li>
+                    {menuItems.map((list) => (
+                      <List
+                        key={list.id}
+                        id={list.id}
+                        title={list.title}
+                        src={list.src}
+                        leftLineFlex={list.leftLineFlex}
+                        rightLineFlex={list.rightLineFlex}
+                        thumbnailPosition={list.thumbnailPosition}
+                        x={x}
+                        y={y}
+                        offset={list.offset}
+                        setCursorHovered={setCursorHovered}
+                      />
+                    ))}
                   </motion.ul>
                 </div>
               </div>
@@ -64,4 +77,6 @@ export default function menu({
       )}
     </AnimatePresence>
   );
-}
+};
+
+export default Menu;

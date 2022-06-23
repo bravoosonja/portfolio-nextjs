@@ -10,10 +10,11 @@ export default function Panels() {
   const [isPanelComplete, setIsPanelComplete] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  // animation delay after load
   useEffect(() => {
     setTimeout(() => {
       setIsVisible(true);
-    }, 1000);
+    }, 200);
   }, []);
 
   return (

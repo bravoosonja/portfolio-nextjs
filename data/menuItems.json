@@ -1,0 +1,38 @@
+[
+    {
+      "title": "About",
+      "id": "about",
+      "leftLineFlex": 0,
+      "rightLineFlex": 1,
+     "thumbnailPosition": 700,
+      "offset": 200,
+      "src": 1
+    },
+    {
+      "title": "Skills",
+      "id": "skills",
+      "leftLineFlex": 3,
+      "rightLineFlex": 1,
+      "thumbnailPosition": 200,
+      "offset": -500,
+      "src": 2
+    },
+    {
+      "title": "Projects",
+      "id": "projects",
+      "leftLineFlex": 1,
+      "rightLineFlex": 3,
+      "thumbnailPosition": 900,
+      "offset": 300,
+      "src": 3
+    },
+    {
+      "title": "Contact",
+      "id": "contact",
+      "leftLineFlex": 3,
+      "rightLineFlex": 2,
+      "thumbnailPosition": 100,
+      "offset": -600,
+      "src": 4
+    }
+]

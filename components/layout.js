@@ -26,12 +26,12 @@ export default function Layout({ children }) {
         transition={{ ease: "linear", duration: 0.1 }}
         className="cursor"
       ></motion.div>
-      <Header
+      {/* <Header
         setMenuState={setMenuState}
         setCursorHovered={setCursorHovered}
         onMouseEnter={() => setCursorHovered(true)}
         onMouseLeave={() => setCursorHovered(false)}
-      />
+      /> */}
       <Menu
         x={x}
         y={y}

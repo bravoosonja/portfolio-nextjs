@@ -6,7 +6,11 @@ import styles from "../styles/components/header.module.scss";
 // Icons
 import { CgMenu } from "react-icons/cg";
 
-export default function Header({ setMenuState, setCursorHovered }) {
+export default function Header({
+  setMenuState,
+  setCursorHovered,
+  headerState,
+}) {
   // close hamburger menu upon navigation
   const location = useRouter();
 

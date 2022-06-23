@@ -6,6 +6,7 @@ import Skills from "./skills";
 import Projects from "./projects";
 import Contact from "./contact";
 import Panels from "../components/panels";
+import Header from "../components/header";
 // Styles
 import styles from "../styles/components/home.module.scss";
 // framer motion
@@ -16,16 +17,19 @@ import { transition, parent } from "../util/animationVariants";
 export default function Home() {
   return (
     <AnimatePresence>
-      <div className={styles["home"]}>
+      <div
+        className={styles["home"]}
+        initial={{ visibility: "hidden" }}
+        animate={{ visibility: "visible", transition: { delay: 2 } }}
+        exit={{ visibility: "hidden", transition: { delay: 2 } }}
+      >
         <div className={styles["inner-home"]}>
+          <head>
+            <Header />
+          </head>
           <section>
             <div className={styles["container"]}>
-              <motion.div
-                className={styles["headline"]}
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible", transition: { delay: 1 } }}
-                exit={{ visibility: "hidden", transition: { delay: 1 } }}
-              >
+              <motion.div className={styles["headline"]}>
                 <h1>About</h1>
               </motion.div>
               <About />
@@ -33,12 +37,7 @@ export default function Home() {
           </section>
           <section>
             <div className={styles["container"]}>
-              <motion.div
-                className={styles["headline"]}
-                initial={{ visibility: "hidden" }}
-                animate={{ visibility: "visible", transition: { delay: 1 } }}
-                exit={{ visibility: "hidden", transition: { delay: 1 } }}
-              >
+              <motion.div>
                 <h1>Skills</h1>
               </motion.div>
               <Skills />

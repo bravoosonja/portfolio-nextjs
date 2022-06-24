@@ -1,22 +1,21 @@
-import React, { useState } from "react";
-// Components
-import Header from "./header";
-import Menu from "./menu";
-// Hooks
-import useMousePosition from "../hooks/useMousePosition";
-// Framer-motion
+import { useState } from "react";
 import { motion } from "framer-motion";
+// components
+import Header from "./header";
+import HamburgerMenu from "./hamburgerMenu";
+import useMousePosition from "../hooks/useMousePosition";
 
 export default function Layout({ children }) {
-  const [menuState, setMenuState] = useState(false);
+  const [hamburgerMenuState, setHamburgerMenuState] = useState(false);
   const [cursorHovered, setCursorHovered] = useState(false);
 
-  // Mouse coordinates
+  // mouse coordinates
   const { x, y } = useMousePosition();
 
   return (
-    <div className="app">
+    <>
       <motion.div
+        className="cursor"
         animate={{
           x: x - 16,
           y: y - 16,
@@ -24,26 +23,23 @@ export default function Layout({ children }) {
           opacity: cursorHovered ? 0.2 : 1,
         }}
         transition={{ ease: "linear", duration: 0.1 }}
-        className="cursor"
       ></motion.div>
-      {/* <Header
-        setMenuState={setMenuState}
+      <Header
+        setHamburgerMenuState={setHamburgerMenuState}
+        setCursorHovered={setCursorHovered}
+      />
+      {/* <HamburgerMenu
+        x={x}
+        y={y}
+        hamburgerMenuState={hamburgerMenuState}
+        setHamburgerMenuState={setHamburgerMenuState}
         setCursorHovered={setCursorHovered}
         onMouseEnter={() => setCursorHovered(true)}
         onMouseLeave={() => setCursorHovered(false)}
       /> */}
-      <Menu
-        x={x}
-        y={y}
-        menuState={menuState}
-        setMenuState={setMenuState}
-        setCursorHovered={setCursorHovered}
-        onMouseEnter={() => setCursorHovered(true)}
-        onMouseLeave={() => setCursorHovered(false)}
-      />
       <div>
         <main>{children}</main>
       </div>
-    </div>
+    </>
   );
 }

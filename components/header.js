@@ -6,16 +6,12 @@ import styles from "../styles/components/header.module.scss";
 // Icons
 import { CgMenu } from "react-icons/cg";
 
-export default function Header({
-  setMenuState,
-  setCursorHovered,
-  headerState,
-}) {
+export default function Header({ setHamburgerMenuState, setCursorHovered }) {
   // close hamburger menu upon navigation
   const location = useRouter();
 
   useEffect(() => {
-    setMenuState(false);
+    setHamburgerMenuState(false);
   }, [location]);
 
   return (
@@ -27,7 +23,7 @@ export default function Header({
           </Link>
           <div
             className={styles["hamburger-menu"]}
-            onClick={() => setMenuState(true)}
+            onClick={() => setHamburgerMenuState(true)}
             onMouseEnter={() => setCursorHovered(true)}
             onMouseLeave={() => setCursorHovered(false)}
           >

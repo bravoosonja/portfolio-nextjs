@@ -1,4 +1,14 @@
-import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+// Animations
+import { motion } from "framer-motion";
+import {
+  maskAnimation,
+  transition,
+  titleSlideUp,
+} from "../util/animationVariants";
+// Styles
+import styles from "../styles/components/menu.module.scss";
 
 export default function List({
   title,
@@ -12,9 +22,8 @@ export default function List({
   offset,
   setCursorHovered,
 }) {
-  const [hoverState, setHoverState] = useState(false);
-
   // floating image hover effect
+  const [hoverState, setHoverState] = useState(false);
   const list = useRef();
 
   const [listPosition, setListPosition] = useState({
@@ -58,16 +67,16 @@ export default function List({
             </h2>
           </motion.div>
           {/* <div
-              className={styles["thumbnail"]}
-              style={{ left: thumbnailPosition }}
-            >
-              <Image src={src} />
-              <motion.div
-                className={styles["mask"]}
-                variants={maskAnimation}
-                transition={{ ...transition, duration: 1 }}
-              ></motion.div>
-            </div> */}
+            className={styles["thumbnail"]}
+            style={{ left: thumbnailPosition }}
+          >
+            <Image src={src} />
+            <motion.div
+              className={styles["mask"]}
+              variants={maskAnimation}
+              transition={{ ...transition, duration: 1 }}
+            ></motion.div>
+          </div> */}
           <motion.div
             className={styles["floating-image"]}
             initial={{ opacity: 0 }}

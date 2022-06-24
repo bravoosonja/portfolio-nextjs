@@ -133,39 +133,6 @@ ul {
       opacity: 0.4;
     }
   }
-}
-
-// classes
-  .container {
-    flex-grow: 1;
-    margin: 0 auto;
-    padding: 0 32px;
-    position: relative;
-    width: auto;
-  
-    @media (min-width: 1024px) {
-      max-width: 960px;
-    }
-  
-    @media (min-width: 1216px) {
-      max-width: 1152px;
-    }
-  
-    @media (min-width: 1480px) {
-      max-width: 1244px;
-    }
-    
-    &.fluid {
-      padding: 0;
-      margin: 0;
-      max-width: 100% !important;
-    }
-  }
-  
-  .body-lock {
-    overflow-y: hidden;
-  }
-  
   .cursor {
     cursor: pointer;
     height: 2.5rem;
@@ -177,4 +144,7 @@ ul {
     border-radius: 100%;
     pointer-events: none;
   }
+
+}
+
 

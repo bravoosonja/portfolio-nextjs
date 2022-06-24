@@ -1,13 +1,12 @@
-// Styles
-import "../styles/global.scss";
-// Components
-import Layout from "../components/layout";
-// Framer motion
 import { AnimatePresence } from "framer-motion";
+// styles
+import "../styles/global.scss";
+// layout
+import Layout from "../components/layout";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       <Layout>
         <Component {...pageProps} />
       </Layout>

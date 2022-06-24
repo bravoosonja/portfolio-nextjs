@@ -3,8 +3,6 @@ import styles from "../styles/components/panels.module.scss";
 // Animation
 import { motion, AnimatePresence } from "framer-motion";
 import { transition } from "../util/animationVariants";
-// Hooks
-import useWindowSize from "../hooks/useWindowSize";
 
 export default function Panels() {
   const [isPanelComplete, setIsPanelComplete] = useState(false);
